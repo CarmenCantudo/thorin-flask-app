@@ -1,5 +1,7 @@
-import os   # Stardard python library, built-in variable 
-from flask import Flask     # Importing the Flask Class
+# Stardard python library, built-in variable
+import os
+# Importing the Flask Class, render_template
+from flask import Flask, render_template
 
 # Create an instance of this class and store it in the app variable
 app = Flask(__name__)
@@ -8,7 +10,7 @@ app = Flask(__name__)
 # Route decorator to tell Flask what URL should trigger the function
 @app.route("/")
 def index():
-    return "Hello, World"
+    return render_template("index.html")
 
 
 # Using the os module to get the 'IP' environment variable if it exists
